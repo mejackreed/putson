@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Jack Reed']
   spec.email         = ['phillipjreed@gmail.com']
 
-  spec.summary       = ''
-  spec.description   = ''
-  spec.homepage      = ''
+  spec.summary       = 'A quick Ruby interface to put some JSON somewhere.'
+  spec.description   = 'A quick Ruby interface to put some JSON somewhere.'
+  spec.homepage      = 'https://github.com/mejackreed/putson'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
@@ -20,6 +20,8 @@ Gem::Specification.new do |spec|
   spec.bindir        = 'exe'
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
+
+  spec.add_dependency 'faraday'
 
   spec.add_development_dependency 'bundler', '~> 1.15'
   spec.add_development_dependency 'rake', '~> 10.0'

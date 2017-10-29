@@ -1,8 +1,6 @@
 # Putson
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/putson`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+A quick Ruby interface to put some JSON somewhere. Integrated first with [myjson](http://myjson.com/).
 
 ## Installation
 
@@ -22,7 +20,35 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Create an instance
+```ruby
+> putson = Putson::Client.new
+=> #<Putson::Client:0x007f927b06ae40 @id=nil>
+```
+
+Post some data
+```ruby
+# Data can be JSON (as a string). Or another object that responds to `to_json`.
+> putson.post({yo: 'lo'})
+=> "lwdaz"
+```
+
+Get some data
+```ruby
+> putson.get
+=> "{\"yo\":\"lo\"}"
+# You can also get data from another id
+> putson.get('abc123')
+=> "another response"
+```
+
+Update some data
+```ruby
+> putson.put({yo: 'no'})
+=> "lwdaz"
+> putson.get
+=> "{\"yo\":\"no\"}"
+```
 
 ## Development
 
@@ -32,7 +58,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/putson.
+Bug reports and pull requests are welcome on GitHub at https://github.com/mejackreed/putson.
 
 ## License
 
