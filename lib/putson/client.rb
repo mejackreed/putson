@@ -36,11 +36,17 @@ module Putson
       response.body
     end
 
+    def url
+      return if id.nil?
+      "#{URL}bins/#{id}"
+    end
+
     private
 
     def parse_post_response(response)
       body = JSON.parse(response.body)
       @id ||= body.fetch('uri', nil).gsub("#{URL}bins/", '')
+      url
     end
 
     def client

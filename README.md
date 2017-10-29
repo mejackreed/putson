@@ -30,7 +30,7 @@ Post some data
 ```ruby
 # Data can be JSON (as a string). Or another object that responds to `to_json`.
 > putson.post({yo: 'lo'})
-=> "lwdaz"
+=> "https://api.myjson.com/bins/lwdaz"
 ```
 
 Get some data
@@ -45,7 +45,7 @@ Get some data
 Update some data
 ```ruby
 > putson.put({yo: 'no'})
-=> "lwdaz"
+=> "https://api.myjson.com/bins/lwdaz"
 > putson.get
 => "{\"yo\":\"no\"}"
 ```
